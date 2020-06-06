@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:catchapp/src/searchProtest.dart';
+import 'package:catchapp/src/map.dart';
+import 'package:catchapp/src/favourite.dart';
+import 'package:catchapp/src/addProtest.dart';
+import 'package:catchapp/src/settings.dart';
 
 class StartPage extends StatefulWidget {
   StartPage({Key key, this.title}) : super(key: key);
