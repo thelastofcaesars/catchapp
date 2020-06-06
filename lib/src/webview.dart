@@ -27,7 +27,6 @@ class WebViewState extends State<WebView> {
         onPlatformViewCreated: _onPlatformViewCreated,
       );
     }
-    // TODO add other platforms
     return Text(
         '$defaultTargetPlatform is not yet supported by the map view plugin');
   }
