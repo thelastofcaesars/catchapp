@@ -1,4 +1,5 @@
-import 'package:catchapp/src/templatePage.dart';
+import 'package:catchapp/src/login.dart';
+import 'package:catchapp/src/signup.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -11,11 +12,11 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   
-  Widget _submitButton() {
+  Widget _loginButton() {
     return InkWell(
       onTap: () {
         Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginPage()));
+          context, MaterialPageRoute(builder: (context) => LoginPage(title: 'Login',)));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -25,7 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
           borderRadius: BorderRadius.all(Radius.circular(100)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.yellow.withAlpha(100),
+              color: Colors.yellow.withAlpha(200),
               offset: Offset(2, 4),
               blurRadius: 8,
               spreadRadius: 2
@@ -40,98 +41,109 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
+  Widget _signupButton() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SignUpPage(title: 'Sign Up')));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 15),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(100)),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.white.withAlpha(255),
+              offset: Offset(2, 4),
+              blurRadius: 8,
+              spreadRadius: 2
+            )
+          ]
+        ),
+        child: Text(
+          'Register Now!',
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        )
+      ),
+    );
+  }
+
   Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        text: 'd',
+        text: 'catch',
         style: TextStyle(
-          fontSize: 30,
+          fontSize: 70,
           fontWeight: FontWeight.w700,
-          color: Colors.white,
+          color: Colors.red,
         ),
         children: [
           TextSpan(
-            text: 'ev',
+            text: 'App     ',
             style: TextStyle(color: Colors.black, fontSize: 30)
           ),
           TextSpan(
-            text: 'rnz',
-            style: TextStyle(color: Colors.white, fontSize: 30)
+            text: 'Your',
+            style: TextStyle(color: Colors.red, fontSize: 30)
+          ),
+          TextSpan(
+            text: ' PROTEST',
+            style: TextStyle(color: Colors.black, fontSize: 50)
           )
         ]
       ),
     );
   }
-  
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _title(),
-            SizedBox(
-              height: 80,
-            ),
-            _submitButton(),
-            SizedBox(
-              height: 20,
-            ),
-            _submitButton(),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.grey.shade200,
+              offset: Offset(2, 4),
+              blurRadius: 5,
+              spreadRadius: 2
+            )
           ],
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.green, Colors.greenAccent]
+          )
+        ),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _title(),
+              SizedBox(
+                height: 60,
+              ),
+              _loginButton(),
+              SizedBox(
+                height: 20,
+              ),
+              _signupButton(),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
