@@ -15,9 +15,9 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends State<StartPage> {
 
-  static bool isBiznes = false;
+  static bool isBussinessman = true;
   int _cIndex = 0;
-  String _title = isBiznes ? '#AllLivesMatter' : '#BlackLivesMatter';
+  String _title = isBussinessman ? '#AllLivesMatter' : '#BlackLivesMatter';
   
   static List<Widget> _widgetOptions = <Widget> [
     MapPage(),
