@@ -120,7 +120,7 @@ class _WelcomePageState extends State<WelcomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.orange, Colors.orangeAccent]
+            colors: [Color(0xfffbb448), Color(0xfff7892b)]
           )
         ),
         child: Center(
