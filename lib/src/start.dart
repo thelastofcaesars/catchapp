@@ -15,12 +15,12 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends State<StartPage> {
 
+  static bool isBiznes = false;
   int _cIndex = 0;
+  String _title = isBiznes ? '#AllLivesMatter' : '#BlackLivesMatter';
   
-  static const List<Widget> _widgetOptions = <Widget> [
-    Text(
-      'Index 0',
-    ),
+  static List<Widget> _widgetOptions = <Widget> [
+    MapPage(),
     Text(
       'Index 1',
     ),
@@ -44,7 +44,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(_title),
       ),
       body: Center(
         child: _widgetOptions[_cIndex],
