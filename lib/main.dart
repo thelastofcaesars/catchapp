@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CatchApp',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.deepOrange,
       ),
       home: WelcomePage(title: 'CatchApp Your Protest'),
       debugShowCheckedModeBanner: false,
