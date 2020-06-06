@@ -23,9 +23,7 @@ class _StartPageState extends State<StartPage> {
     MapPage(),
     AddProtestPage(),
     FavouritePage(),
-    Text(
-      'Index 3',
-    ),
+    SearchProtestPage(),
     SettingsPage(),
   ];
   
