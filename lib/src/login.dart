@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => StartPage()));
+            context, MaterialPageRoute(builder: (context) => StartPage(title: 'Main Page')));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => StartPage()));
+            context, MaterialPageRoute(builder: (context) => StartPage(title: 'Main Page')));
       },
       child: Container(
         height: 40,
