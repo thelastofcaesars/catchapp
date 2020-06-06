@@ -22,9 +22,7 @@ class _StartPageState extends State<StartPage> {
   static List<Widget> _widgetOptions = <Widget> [
     MapPage(),
     AddProtestPage(),
-    Text(
-      'Index 2',
-    ),
+    FavouritePage(),
     Text(
       'Index 3',
     ),
