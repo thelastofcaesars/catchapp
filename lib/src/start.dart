@@ -26,9 +26,7 @@ class _StartPageState extends State<StartPage> {
     Text(
       'Index 3',
     ),
-    Text(
-      'Index 4',
-    ),
+    SettingsPage(),
   ];
   
   void _onItemTapped(index) {
