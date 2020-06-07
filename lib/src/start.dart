@@ -22,8 +22,8 @@ class _StartPageState extends State<StartPage> {
   static List<Widget> _widgetOptions = <Widget> [
     MapPage(),
     AddProtestPage(),
-    FavouritePage(),
     SearchProtestPage(),
+    FavouritePage(),
     SettingsPage(),
   ];
   
@@ -52,11 +52,11 @@ class _StartPageState extends State<StartPage> {
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite, color: Colors.black,),
+            icon: Icon(Icons.search, color: Colors.black,),
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: Colors.black,),
+            icon: Icon(Icons.favorite, color: Colors.black,),
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
