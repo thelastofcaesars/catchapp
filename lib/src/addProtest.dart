@@ -34,7 +34,9 @@ class _AddProtestPageState extends State<AddProtestPage> {
 
   _saveForm() {
     var form = formKey.currentState;
-    if((_selectedAction == "Choose action") || (_selectedLocation == "Choose ..") || (_organizer == "Current User"))
+    if((_protestName == "") || (_protestName == "Protest name") || 
+      (_selectedAction == "Choose action") || (_selectedLocation == "Choose ..") 
+      || (_organizer == "Current User"))
       return;
       // catch alias/action here !!! bad value, need parsing or sth
     protestRepository.addProtest(_protestName, _selectedAction, _selectedLocation, _organizer, 0, 10000, 200000, _comment);
