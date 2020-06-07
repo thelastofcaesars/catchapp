@@ -19,28 +19,77 @@ class ActionRepository {
 
   List _actions = [
     {
-      "action": "Transport Dializowy",
-      "alias": "transport-dializowy",
+      "action": "#AllLivesMatter",
+      "alias": "alm",
       "locations": [
-        "Dom Pacjenta",
-        "SD Oleśnica",
-        "Szpital Oleśnica",
-        "Szpital Namysłów",
+        "Wrocław",
+        "Waszyngton DC",
+        "Los Angeles",
+        "Oleśncia",
+      ]
+    },
+    {
+      "action": "#BlackLivesMatter",
+      "alias": "blm",
+      "locations": [
+        "Warszawa",
+        "Poznań",
+        "Minneapolis",
+      ]
+    },
+    {
+      "action": "Protest Ekologiczny",
+      "alias": "protest-ekologiczny",
+      "locations": [
+        "Polska",
+        "Wrocław",
+        "Warszawa",
         "Inna",
       ]
     },
     {
-      "action": "Transport Sanitarny",
-      "alias": "transport-sanitarny",
+      "action": "Protest Firmowy",
+      "alias": "protest-firmowy",
       "locations": [
-        "Dom Pacjenta",
-        "SD Oleśnica",
+        "Polska",
+        "Wrocław",
+        "Warszawa",
         "Inna",
       ]
     },
     {
-      "action": "Zabezpieczenie",
-      "alias": "zabezpieczenie",
+      "action": "Protest Pokojowy",
+      "alias": "protest-pokojowy",
+      "locations": [
+        "Polska",
+        "Wrocław",
+        "Warszawa",
+        "Inna",
+      ]
+    },
+    {
+      "action": "Protest Polityczny",
+      "alias": "protest-polityczny",
+      "locations": [
+        "Polska",
+        "Wrocław",
+        "Warszawa",
+        "Inna",
+      ]
+    },
+    {
+      "action": "Protest Przedsiębiorców",
+      "alias": "protest-przedsiębiorców",
+      "locations": [
+        "Polska",
+        "Wrocław",
+        "Warszawa",
+        "Inna",
+      ]
+    },
+    {
+      "action": "Protest Społeczny",
+      "alias": "protest-społeczny",
       "locations": [
         "Oleśnica",
         "Hala Atol",
@@ -54,46 +103,17 @@ class ActionRepository {
       ]
     },
     {
-      "action": "JWS",
-      "alias": "jws",
+      "action": "Zamieszki",
+      "alias": "looting",
       "locations": [
-        "Oleśnica",
-        "Wrocław",
-        "A4",
-        "Inna",
+        "Warszawa",
+        "Poznań",
+        "Minneapolis",
       ]
     },
     {
-      "action": "Inny Wyjazd",
-      "alias": "inny-wyjad",
-      "locations": [
-        "Oleśnica",
-        "Wrocław",
-        "A4",
-        "Inna",
-      ]
-    },
-    {
-      "action": "Szkolenie",
-      "alias": "szkolenie",
-      "locations": [
-        "Oleśnica",
-        "Siedziba",
-        "Inna",
-      ]
-    },
-    {
-      "action": "Spotkanie",
-      "alias": "spotkanie",
-      "locations": [
-        "Siedziba",
-        "Dom Spotkań NGO Brzozowa",
-        "Inna",
-      ]
-    },
-    {
-      "action": "Inne",
-      "alias": "inne",
+      "action": "Inny Protest",
+      "alias": "protest-inny",
       "locations": [
         "Oleśnica",
         "Wrocław",
