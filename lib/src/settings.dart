@@ -54,50 +54,49 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
         Divider(height: 20,),
         Container(
-          height: 200,
-          color: Colors.grey[200],
+          height: 250,
+          color: Colors.grey[300],
           padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text('Email: '),
               Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
-              Divider(height: 10,),
+              Divider(height: 20,),
               Text('Organisation: '),
               Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
-              Divider(height: 10,),
+              Divider(height: 20,),
               Text('Phone: '),
               Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
-              Divider(height: 10,),
-              Text('FAX: '),
+              Divider(height: 20,),
+              Text('Bank Account: '),
               Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
+              Divider(height: 20,),
             ],
           ),
         ),
         Divider(height: 10,),
-        Container(
-          height: 200,
-          color: Colors.grey[200],
-          padding: EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('About me: '),
-              Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
-            ],
+        TextField(
+          decoration: InputDecoration(
+            labelText: 'About me',
+            border: OutlineInputBorder(),
           ),
         ),
         Divider(height: 10,),
-        Container(
-          height: 60,
-          color: Colors.green[700],
-          padding: EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text('About author: ', style: TextStyle(fontSize: 14, color: Colors.white),),
-              Text('Lone Warrior in the Universe, the Wizard', style: TextStyle(fontSize: 18, color: Colors.white),),
-            ],
+        InkWell(
+          onTap: () {
+            
+          },
+          child: Container(
+            height: 60,
+            color: Colors.green[700],
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: <Widget>[
+                Text('About author: ', style: TextStyle(fontSize: 14, color: Colors.white),),
+                Text('Lone Warrior in the Universe, the Wizard', style: TextStyle(fontSize: 18, color: Colors.white),),
+              ],
+            ),
           ),
         ),
       ],
