@@ -60,7 +60,7 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
         Divider(height: 20,),
         Container(
-          height: 250,
+          height: 280,
           color: Colors.grey[300],
           padding: EdgeInsets.all(10),
           child: Column(
@@ -78,6 +78,12 @@ class _SettingsPageState extends State<SettingsPage> {
               Text('Bank Account: '),
               Text(_sPlaceholder, style: TextStyle(fontSize: 18),),
               Divider(height: 20,),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Protest Range (in km)',
+                  border: OutlineInputBorder(),
+                ),
+              ),
             ],
           ),
         ),
