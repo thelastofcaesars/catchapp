@@ -156,6 +156,7 @@ class _AddProtestPageState extends State<AddProtestPage> {
                     ),
                     child: DropdownButtonHideUnderline(
                       child: TextFormField(
+                        initialValue: _comment,
                         onChanged: (value) => _onSelectedComment(value),
                       ),
                     ),
