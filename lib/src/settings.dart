@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
   SettingsPage({Key key}) : super(key: key);
@@ -13,6 +14,11 @@ class _SettingsPageState extends State<SettingsPage> {
   String _status = "Protester";
   String _rank = "Looter";
   String _sPlaceholder = "Lorem ipsum";
+
+  _launchURL() async {
+    const url = 'https://github.com/thelastofcaesars/';
+    launch(url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +91,7 @@ class _SettingsPageState extends State<SettingsPage> {
         Divider(height: 10,),
         InkWell(
           onTap: () {
-            
+            _launchURL();
           },
           child: Container(
             height: 60,
