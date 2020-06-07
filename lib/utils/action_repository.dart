@@ -48,8 +48,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Protest Firmowy",
-      "alias": "protest-firmowy",
+      "action": "Company Protest",
+      "alias": "protest-company",
       "locations": [
         "Polska",
         "Wrocław",
@@ -58,8 +58,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Protest Pokojowy",
-      "alias": "protest-pokojowy",
+      "action": "Peace Protest",
+      "alias": "peace-protest",
       "locations": [
         "Polska",
         "Wrocław",
@@ -68,8 +68,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Protest Polityczny",
-      "alias": "protest-polityczny",
+      "action": "Political Protest",
+      "alias": "political-protest",
       "locations": [
         "Polska",
         "Wrocław",
@@ -78,8 +78,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Protest Przedsiębiorców",
-      "alias": "protest-przedsiębiorców",
+      "action": "Bussiness Protest",
+      "alias": "bussiness-protest",
       "locations": [
         "Polska",
         "Wrocław",
@@ -88,8 +88,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Protest Społeczny",
-      "alias": "protest-społeczny",
+      "action": "Social Protest",
+      "alias": "social-protest",
       "locations": [
         "Oleśnica",
         "Hala Atol",
@@ -103,8 +103,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Zamieszki",
-      "alias": "looting",
+      "action": "Looting Protest",
+      "alias": "looting-protest",
       "locations": [
         "Warszawa",
         "Poznań",
@@ -112,8 +112,8 @@ class ActionRepository {
       ]
     },
     {
-      "action": "Inny Protest",
-      "alias": "protest-inny",
+      "action": "Other Protest",
+      "alias": "other-protest",
       "locations": [
         "Oleśnica",
         "Wrocław",

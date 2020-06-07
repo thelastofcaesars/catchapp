@@ -1,3 +1,4 @@
+import 'package:catchapp/utils/protest_repository.dart';
 import 'package:flutter/material.dart';
 import '../utils/action_repository.dart';
 import '../utils/datatime_picker.dart';
@@ -12,11 +13,17 @@ class AddProtestPage extends StatefulWidget {
 class _AddProtestPageState extends State<AddProtestPage> {
 
   ActionRepository actionRepo = ActionRepository();
-  List<String> _actions = ["Wybierz działanie"];
-  List<String> _locations = ["Wybierz .."];
-  String _selectedAction = "Wybierz działanie";
-  String _selectedLocation = "Wybierz ..";
-  String _organiser = "Organiser";
+  ProtestRepository protestRepository = ProtestRepository();
+
+  List<String> _actions = ["Choose action"];
+  List<String> _locations = ["Choose .."];
+  String _protestName = "Protest name";
+  String _selectedAction = "Choose action";
+  String _selectedAlias = "Choose action";
+  String _selectedLocation = "Choose ..";
+  String _organizer = "Current User";
+  String _comment = "COMMENT";
+
   final formKey = new GlobalKey<FormState>();
 
   @override
@@ -27,12 +34,16 @@ class _AddProtestPageState extends State<AddProtestPage> {
 
   _saveForm() {
     var form = formKey.currentState;
+    if((_selectedAction == "Choose action") || (_selectedLocation == "Choose ..") || (_organizer == "Current User"))
+      return;
+      // catch alias/action here !!! bad value, need parsing or sth
+    protestRepository.addProtest(_protestName, _selectedAction, _selectedLocation, _organizer, 0, 10000, 200000, _comment);
   }
 
   void _onSelectedAction(String value) {
     setState(() {
-      _selectedLocation = "Wybierz ..";
-      _locations = ["Wybierz .."];
+      _selectedLocation = "Choose ..";
+      _locations = ["Choose .."];
       _selectedAction = value;
       _locations = List.from(_locations)..addAll(actionRepo.getLocalByAction(value));
     });
@@ -40,6 +51,14 @@ class _AddProtestPageState extends State<AddProtestPage> {
 
   void _onSelectedLocation(String value) {
     setState(() => _selectedLocation = value);
+  }
+
+  void _onSelectedName(String value) {
+    setState(() => _protestName = value);
+  }
+
+  void _onSelectedComment(String value) {
+    setState(() => _comment = value);
   }
 
   @override
@@ -53,10 +72,24 @@ class _AddProtestPageState extends State<AddProtestPage> {
               key: formKey,
               child: ListView(
                 children: <Widget>[
+                  Divider(height: 10.0,),
+                  InputDecorator(
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(12, 10, 8, 0),
+                      labelText: 'Name of Protest',
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: TextFormField(
+                        initialValue: _protestName,
+                        onChanged: (value) => _onSelectedName(value),
+                      ),
+                    ),
+                  ),
+                  Divider(height: 10.0,),
                   InputDecorator(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(12, 0, 8, 0),
-                      labelText: 'Protest celem',
+                      labelText: 'Protest Target',
                     ),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
@@ -76,7 +109,7 @@ class _AddProtestPageState extends State<AddProtestPage> {
                   InputDecorator(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(12, 10, 8, 0),
-                      labelText: 'Wybierz lokację',
+                      labelText: 'Choose location',
                     ),
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
@@ -95,35 +128,40 @@ class _AddProtestPageState extends State<AddProtestPage> {
                   InputDecorator(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(12, 10, 8, 0),
-                      labelText: 'Lokacja spoza listy',
+                      labelText: 'Other Location',
                     ),
                     child: DropdownButtonHideUnderline(
-                      child: TextFormField(initialValue: 'Wpisz alternatywną lokację',),
+                      child: TextFormField(
+                        initialValue: 'Write down other location',
+                        onChanged: (value) => _onSelectedLocation(value),
+                      ),
                     ),
                   ),
                   
                   Divider(height: 30.0,),
-                  Text('Rozpoczęcie:', textScaleFactor: 1.2,),
+                  Text('Start:', textScaleFactor: 1.2,),
                   Divider(height: 20.0,),
                   DataTimePicker(),
                   Divider(height: 20.0,),
-                  Text('Zakończenie:', textScaleFactor: 1.2,),
+                  Text('End:', textScaleFactor: 1.2,),
                   Divider(height: 20.0,),
                   DataTimePicker(),
                   Divider(height: 20.0,),
                   InputDecorator(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(12, 10, 8, 0),
-                      labelText: 'Komentarz',
+                      labelText: 'Comment',
                     ),
                     child: DropdownButtonHideUnderline(
-                      child: TextFormField(),
+                      child: TextFormField(
+                        onChanged: (value) => _onSelectedComment(value),
+                      ),
                     ),
                   ),
                   Divider(height: 30.0,),
                   Center(
                     child: RaisedButton(
-                      child: Text('Wyślij',
+                      child: Text('Send',
                         style: TextStyle(
                           color: Colors.white,
                         ),
