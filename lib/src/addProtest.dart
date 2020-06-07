@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../utils/action_repository.dart';
+import '../utils/datatime_picker.dart';
 
 class AddProtestPage extends StatefulWidget {
   AddProtestPage({Key key}) : super(key: key);
@@ -14,10 +16,7 @@ class _AddProtestPageState extends State<AddProtestPage> {
   List<String> _locations = ["Wybierz .."];
   String _selectedAction = "Wybierz działanie";
   String _selectedLocation = "Wybierz ..";
-
-  int _countMembernRole = 1;
-  //String _comments;
-  //List<String> _myCrew = new List(3), _myCrewResult = new List(3);
+  String _organiser = "Organiser";
   final formKey = new GlobalKey<FormState>();
 
   @override
@@ -28,24 +27,6 @@ class _AddProtestPageState extends State<AddProtestPage> {
 
   _saveForm() {
     var form = formKey.currentState;
-    /*if (form.validate()) {
-      form.save();
-      setState(() {
-        _myActivityResult = _myActivity;
-        _activityResult = _activity;
-      });
-    }*/
-  }
-
-  void _addNewMembernRoleBox() {
-    setState(() {
-      _countMembernRole = _countMembernRole + 1;
-    });
-  }
-  void _removeLastMembernRoleBox() {
-    setState(() {
-      _countMembernRole = _countMembernRole > 1 ? _countMembernRole -1 : _countMembernRole;
-    });
   }
 
   void _onSelectedAction(String value) {
@@ -63,8 +44,6 @@ class _AddProtestPageState extends State<AddProtestPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> _membersInAction =
-    new List.generate(_countMembernRole, (int i) => new MembernRoleBox());
     return Material(
       child: Column(
         children: <Widget>[
@@ -124,32 +103,6 @@ class _AddProtestPageState extends State<AddProtestPage> {
                   ),
                   
                   Divider(height: 30.0,),
-                  new Container(
-                    height: 150.0,
-                    child: new ListView(
-                      children: _membersInAction,
-                      scrollDirection: Axis.horizontal,
-                    ),
-                  ),
-                  Divider(height: 10.0,),
-                  Row( 
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget> [
-                      IconButton(
-                        icon: Icon(Icons.add_circle),
-                        iconSize: 30.0,
-                        onPressed: _addNewMembernRoleBox,
-                      ),
-                      VerticalDivider(),
-                      IconButton(
-                        icon: Icon(Icons.remove_circle),
-                        iconSize: 30.0,
-                        onPressed: _removeLastMembernRoleBox,
-                      ),
-                    ],
-                  ),
-                  Divider(height: 10.0,),
-                  Divider(height: 20.0,),
                   Text('Rozpoczęcie:', textScaleFactor: 1.2,),
                   Divider(height: 20.0,),
                   DataTimePicker(),
