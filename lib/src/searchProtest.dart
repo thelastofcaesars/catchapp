@@ -78,8 +78,6 @@ class _SearchProtestPageState extends State<SearchProtestPage> {
                   ),
                 );
               }
-              //children: _p,
-              //scrollDirection: Axis.vertical,
             ),
           ),        
         ],
