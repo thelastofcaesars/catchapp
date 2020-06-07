@@ -16,14 +16,14 @@ class StartPage extends StatefulWidget {
 class _StartPageState extends State<StartPage> {
 
   static bool isBussinessman = true;
-  int _cIndex = 0;
+  int _cIndex = 1;
   String _title = isBussinessman ? '#AllLivesMatter' : '#BlackLivesMatter';
   
   static List<Widget> _widgetOptions = <Widget> [
     MapPage(),
     AddProtestPage(),
-    FavouritePage(),
     SearchProtestPage(),
+    FavouritePage(),
     SettingsPage(),
   ];
   
@@ -52,11 +52,11 @@ class _StartPageState extends State<StartPage> {
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite, color: Colors.black,),
+            icon: Icon(Icons.search, color: Colors.black,),
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: Colors.black,),
+            icon: Icon(Icons.favorite, color: Colors.black,),
             title: Text('nav', style: TextStyle(color: Colors.black), textScaleFactor: 0,),
           ),
           BottomNavigationBarItem(
