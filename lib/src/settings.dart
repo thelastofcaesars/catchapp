@@ -60,7 +60,7 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
         Divider(height: 20,),
         Container(
-          height: 280,
+          height: 310,
           color: Colors.grey[300],
           padding: EdgeInsets.all(10),
           child: Column(
